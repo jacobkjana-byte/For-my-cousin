@@ -1,0 +1,440 @@
+/* ==========================
+   HELLO KITTY SURPRISE
+   style.css — Part 1
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    color:#5a2538;
+    background:#fff4f8;
+    overflow-x:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+    background:
+        radial-gradient(circle at 15% 20%,#ffd9e8 0%,transparent 28%),
+        radial-gradient(circle at 85% 80%,#ffc1d9 0%,transparent 30%),
+        linear-gradient(135deg,#fff8fb,#ffeaf2);
+}
+
+.cloud{
+    position:absolute;
+    width:180px;
+    height:60px;
+    border-radius:50px;
+    background:rgba(255,255,255,.65);
+    filter:blur(1px);
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:inherit;
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:75px;
+    height:75px;
+    left:25px;
+    bottom:15px;
+}
+
+.cloud::after{
+    width:90px;
+    height:90px;
+    right:25px;
+    bottom:10px;
+}
+
+.cloud1{
+    top:12%;
+    left:-60px;
+    animation:cloudMove 18s linear infinite;
+}
+
+.cloud2{
+    top:65%;
+    right:-100px;
+    animation:cloudMoveReverse 22s linear infinite;
+}
+
+@keyframes cloudMove{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(120vw);
+    }
+}
+
+@keyframes cloudMoveReverse{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-120vw);
+    }
+}
+
+.floating span{
+    position:absolute;
+    font-size:25px;
+    bottom:-60px;
+    animation:floatUp linear infinite;
+    opacity:.8;
+}
+
+.floating span:nth-child(1){
+    left:5%;
+    animation-duration:8s;
+}
+
+.floating span:nth-child(2){
+    left:18%;
+    animation-duration:11s;
+    animation-delay:2s;
+}
+
+.floating span:nth-child(3){
+    left:32%;
+    animation-duration:9s;
+    animation-delay:1s;
+}
+
+.floating span:nth-child(4){
+    left:46%;
+    animation-duration:12s;
+}
+
+.floating span:nth-child(5){
+    left:60%;
+    animation-duration:8s;
+    animation-delay:3s;
+}
+
+.floating span:nth-child(6){
+    left:73%;
+    animation-duration:10s;
+}
+
+.floating span:nth-child(7){
+    left:85%;
+    animation-duration:13s;
+    animation-delay:2s;
+}
+
+.floating span:nth-child(8){
+    left:94%;
+    animation-duration:9s;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.welcome{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.card{
+    width:min(92%,450px);
+    padding:38px 30px;
+    text-align:center;
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(16px);
+    border:2px solid rgba(255,120,160,.25);
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(160,60,100,.15);
+}
+
+.bow{
+    font-size:65px;
+    margin-bottom:8px;
+    animation:bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0) rotate(-4deg);
+    }
+
+    50%{
+        transform:translateY(-8px) rotate(4deg);
+    }
+}
+
+.miniTitle{
+    font-size:.9rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#d45b82;
+    margin-bottom:12px;
+}
+
+.card h1{
+    font-family:'Pacifico',cursive;
+    font-size:2.6rem;
+    line-height:1.35;
+    color:#d94f7a;
+    margin-bottom:22px;
+}
+
+#intro{
+    min-height:80px;
+    line-height:1.8;
+    color:#704052;
+    margin-bottom:25px;
+}
+
+button{
+    border:0;
+    padding:14px 28px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff6f9f,#e94d7d);
+    color:white;
+    font-family:'Poppins',sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(220,70,120,.25);
+    transition:transform .25s ease,box-shadow .25s ease;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 14px 30px rgba(220,70,120,.35);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+.hidden{
+    display:none !important;
+}
+
+#surprise{
+    padding:70px 20px;
+}
+
+.letter{
+    width:min(92%,760px);
+    margin:auto;
+    padding:40px;
+    background:rgba(255,255,255,.78);
+    border:2px solid rgba(255,120,160,.22);
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(160,60,100,.15);
+}
+
+.kittyIcon{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.letter h2{
+    text-align:center;
+    font-family:'Pacifico',cursive;
+    font-size:2rem;
+    color:#d94f7a;
+    margin-bottom:25px;
+}
+
+.letter p{
+    font-size:1.05rem;
+    line-height:1.9;
+    margin:18px 0;
+}
+
+/* ==========================
+   HELLO KITTY SURPRISE
+   style.css — Part 2
+========================== */
+
+.cuteList{
+    margin:28px 0;
+    padding:22px;
+    border-radius:22px;
+    background:#fff0f5;
+    border:1px dashed #f08aaa;
+}
+
+.cuteList div{
+    padding:10px 5px;
+    font-weight:500;
+}
+
+#surpriseButton{
+    display:block;
+    margin:30px auto 0;
+}
+
+.popup{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(70,25,45,.55);
+    backdrop-filter:blur(6px);
+    z-index:1000;
+}
+
+.popup.hidden{
+    display:none !important;
+}
+
+.popupCard{
+    width:min(92%,430px);
+    padding:35px 28px;
+    text-align:center;
+    background:#fff8fb;
+    border:3px solid #ffb2ca;
+    border-radius:30px;
+    box-shadow:0 25px 70px rgba(80,20,45,.3);
+    animation:popupIn .4s ease;
+}
+
+@keyframes popupIn{
+    from{
+        opacity:0;
+        transform:scale(.75) translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.bigBow{
+    font-size:70px;
+    animation:bowSpin 2s ease-in-out infinite;
+}
+
+@keyframes bowSpin{
+    0%,100%{
+        transform:rotate(-5deg) scale(1);
+    }
+
+    50%{
+        transform:rotate(5deg) scale(1.08);
+    }
+}
+
+.popupCard h2{
+    font-family:'Pacifico',cursive;
+    color:#e04f7d;
+    margin:10px 0;
+}
+
+.popupCard h3{
+    color:#d94f7a;
+    font-size:1rem;
+    line-height:1.6;
+    margin:15px 0;
+}
+
+.popupCard p{
+    line-height:1.8;
+    margin:15px 0;
+}
+
+#closeButton{
+    background:#e94d7d;
+    margin-top:10px;
+    min-width:150px;
+}
+
+@media(max-width:600px){
+
+    .card{
+        padding:30px 22px;
+    }
+
+    .card h1{
+        font-size:2.15rem;
+    }
+
+    .bow{
+        font-size:55px;
+    }
+
+    .letter{
+        padding:30px 22px;
+    }
+
+    .letter p{
+        font-size:.98rem;
+    }
+
+    .popupCard{
+        padding:30px 22px;
+    }
+
+}
+
+    .kitty{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.kitty img{
+    width:160px;
+    max-width:70%;
+    height:auto;
+    display:block;
+    animation:kittyFloat 2.5s ease-in-out infinite;
+    filter:drop-shadow(0 12px 12px rgba(200,60,100,.18));
+}
+
+@keyframes kittyFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
